@@ -1,1 +1,25 @@
 <!-- BUILD IT FROM HERE https://getbootstrap.com/docs/5.3/content/tables/#striped-rows -->
+<div class="container mx-auto p-4">
+    <h2 class="text-2xl mb-4">Listado de Cotizaciones</h2>
+    <table class="min-w-full">
+      <thead>
+        <tr>
+          <th class="px-4 py-2">Cliente</th>
+          <th class="px-4 py-2">Fecha</th>
+          <th class="px-4 py-2">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let budget of budgets">
+          <td class="border px-4 py-2">{{budget.client}}</td>
+          <td class="border px-4 py-2">{{budget.date | date}}</td>
+          <td class="border px-4 py-2">
+            <a [routerLink]="['/budgets', budget.id]" 
+               class="bg-blue-500 text-white px-4 py-2 rounded">
+              Ver Detalle
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

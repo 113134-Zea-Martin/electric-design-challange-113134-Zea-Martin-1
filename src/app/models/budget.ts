@@ -7,6 +7,7 @@ export interface Budget {
         - zone
         - moduleType reference that has information about (slots, price, type)
   */
+  items: BudgetItem[];
 }
 
 export enum Zone {
@@ -21,4 +22,9 @@ export interface ModuleType {
   name: string;
   slots: number;
   price: number;
+}
+
+export interface BudgetItem {
+  zone: Zone;
+  moduleType: ModuleType;
 }
